@@ -1,4 +1,4 @@
-APP=tmp
+APP=calculator
 ALLFILES=`ls *.c`
 all:
 	  @echo compiling $(ALLFILES).
@@ -17,7 +17,7 @@ run:
 		./$(APP)
 
 clean:
-	@echo ojcet file remooving.....
+	@echo objcet file remooving.....
 	@rm -f *.o 
 	
 help:
