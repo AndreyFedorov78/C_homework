@@ -11,7 +11,7 @@ int main() {
     uint16_t n; // количество числе
     int value, max; // текущее и максимальное значение
     uint16_t count = 0; // количество максимальных чисел
-
+€
     scanf("%hd", &n);
     for (uint16_t i = 0; i < n; i++) {
         scanf("%d", &value);

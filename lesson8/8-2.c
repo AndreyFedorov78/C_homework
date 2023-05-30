@@ -16,7 +16,7 @@ uint32_t bitCount(uint32_t n, uint32_t k){
 
         }
         if (count_0 == k) count++;
-               
+
     }
     //if ((0 == n) && (k==0)) count=1;
     if ((0 == n) && (k==1)) count=1;
