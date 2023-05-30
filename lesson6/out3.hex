@@ -1,0 +1,208 @@
+
+../Downloads/a2.out:	file format Mach-O 64-bit x86-64
+
+Disassembly of section __TEXT,__text:
+__text:
+100000dd0:	55 	pushq	%rbp
+100000dd1:	48 89 e5 	movq	%rsp, %rbp
+100000dd4:	48 89 7d f8 	movq	%rdi, -8(%rbp)
+100000dd8:	c7 45 f4 1f 00 00 00 	movl	$31, -12(%rbp)
+100000ddf:	48 c7 45 e8 00 00 00 00 	movq	$0, -24(%rbp)
+100000de7:	48 c7 45 e0 01 00 00 00 	movq	$1, -32(%rbp)
+100000def:	48 8b 45 f8 	movq	-8(%rbp), %rax
+100000df3:	80 38 00 	cmpb	$0, (%rax)
+100000df6:	0f 84 36 00 00 00 	je	54 <_getHash+0x62>
+100000dfc:	48 8b 45 f8 	movq	-8(%rbp), %rax
+100000e00:	48 89 c1 	movq	%rax, %rcx
+100000e03:	48 83 c1 01 	addq	$1, %rcx
+100000e07:	48 89 4d f8 	movq	%rcx, -8(%rbp)
+100000e0b:	0f be 10 	movsbl	(%rax), %edx
+100000e0e:	83 ea 61 	subl	$97, %edx
+100000e11:	83 c2 01 	addl	$1, %edx
+100000e14:	48 63 c2 	movslq	%edx, %rax
+100000e17:	48 0f af 45 e0 	imulq	-32(%rbp), %rax
+100000e1c:	48 03 45 e8 	addq	-24(%rbp), %rax
+100000e20:	48 89 45 e8 	movq	%rax, -24(%rbp)
+100000e24:	48 6b 45 e0 1f 	imulq	$31, -32(%rbp), %rax
+100000e29:	48 89 45 e0 	movq	%rax, -32(%rbp)
+100000e2d:	e9 bd ff ff ff 	jmp	-67 <_getHash+0x1f>
+100000e32:	48 8b 45 e8 	movq	-24(%rbp), %rax
+100000e36:	5d 	popq	%rbp
+100000e37:	c3 	retq
+100000e38:	0f 1f 84 00 00 00 00 00 	nopl	(%rax,%rax)
+100000e40:	55 	pushq	%rbp
+100000e41:	48 89 e5 	movq	%rsp, %rbp
+100000e44:	48 83 ec 10 	subq	$16, %rsp
+100000e48:	48 89 7d f0 	movq	%rdi, -16(%rbp)
+100000e4c:	48 8b 7d f0 	movq	-16(%rbp), %rdi
+100000e50:	e8 7b ff ff ff 	callq	-133 <_getHash>
+100000e55:	48 3d 90 9c 6f 22 	cmpq	$577739920, %rax
+100000e5b:	0f 85 09 00 00 00 	jne	9 <_checkPass+0x2a>
+100000e61:	c6 45 ff 01 	movb	$1, -1(%rbp)
+100000e65:	e9 04 00 00 00 	jmp	4 <_checkPass+0x2e>
+100000e6a:	c6 45 ff 00 	movb	$0, -1(%rbp)
+100000e6e:	8a 45 ff 	movb	-1(%rbp), %al
+100000e71:	24 01 	andb	$1, %al
+100000e73:	0f b6 c0 	movzbl	%al, %eax
+100000e76:	48 83 c4 10 	addq	$16, %rsp
+100000e7a:	5d 	popq	%rbp
+100000e7b:	c3 	retq
+100000e7c:	0f 1f 40 00 	nopl	(%rax)
+100000e80:	55 	pushq	%rbp
+100000e81:	48 89 e5 	movq	%rsp, %rbp
+100000e84:	48 81 ec 90 00 00 00 	subq	$144, %rsp
+100000e8b:	48 8d 3d e0 00 00 00 	leaq	224(%rip), %rdi
+100000e92:	48 8b 05 77 01 00 00 	movq	375(%rip), %rax
+100000e99:	48 8b 00 	movq	(%rax), %rax
+100000e9c:	48 89 45 f8 	movq	%rax, -8(%rbp)
+100000ea0:	c7 45 8c 00 00 00 00 	movl	$0, -116(%rbp)
+100000ea7:	b0 00 	movb	$0, %al
+100000ea9:	e9 2e 00 00 00 	jmp	46 <_main+0x5c>
+100000eae:	48 8d 3d d3 00 00 00 	leaq	211(%rip), %rdi
+100000eb5:	48 8d 75 90 	leaq	-112(%rbp), %rsi
+100000eb9:	89 45 88 	movl	%eax, -120(%rbp)
+100000ebc:	b0 00 	movb	$0, %al
+100000ebe:	e8 79 00 00 00 	callq	121
+100000ec3:	48 8d 7d 90 	leaq	-112(%rbp), %rdi
+100000ec7:	89 45 84 	movl	%eax, -124(%rbp)
+100000eca:	e8 71 ff ff ff 	callq	-143 <_checkPass>
+100000ecf:	a8 01 	testb	$1, %al
+100000ed1:	0f 85 05 00 00 00 	jne	5 <_main+0x5c>
+100000ed7:	90 	nop
+100000ed8:	90 	nop
+100000ed9:	90 	nop
+100000eda:	90 	nop
+100000edb:	90 	nop
+100000edc:	48 8d 3d a8 00 00 00 	leaq	168(%rip), %rdi
+100000ee3:	b0 00 	movb	$0, %al
+100000ee5:	e8 4c 00 00 00 	callq	76
+100000eea:	89 45 80 	movl	%eax, -128(%rbp)
+100000eed:	e9 14 00 00 00 	jmp	20 <_main+0x86>
+100000ef2:	48 8d 3d a2 00 00 00 	leaq	162(%rip), %rdi
+100000ef9:	b0 00 	movb	$0, %al
+100000efb:	e8 36 00 00 00 	callq	54
+100000f00:	89 85 7c ff ff ff 	movl	%eax, -132(%rbp)
+100000f06:	48 8b 05 03 01 00 00 	movq	259(%rip), %rax
+100000f0d:	48 8b 00 	movq	(%rax), %rax
+100000f10:	48 8b 4d f8 	movq	-8(%rbp), %rcx
+100000f14:	48 39 c8 	cmpq	%rcx, %rax
+100000f17:	0f 85 0b 00 00 00 	jne	11 <_main+0xa8>
+100000f1d:	31 c0 	xorl	%eax, %eax
+100000f1f:	48 81 c4 90 00 00 00 	addq	$144, %rsp
+100000f26:	5d 	popq	%rbp
+100000f27:	c3 	retq
+100000f28:	e8 03 00 00 00 	callq	3
+100000f2d:	0f 0b 	ud2
+
+_getHash:
+100000dd0:	55 	pushq	%rbp
+100000dd1:	48 89 e5 	movq	%rsp, %rbp
+100000dd4:	48 89 7d f8 	movq	%rdi, -8(%rbp)
+100000dd8:	c7 45 f4 1f 00 00 00 	movl	$31, -12(%rbp)
+100000ddf:	48 c7 45 e8 00 00 00 00 	movq	$0, -24(%rbp)
+100000de7:	48 c7 45 e0 01 00 00 00 	movq	$1, -32(%rbp)
+100000def:	48 8b 45 f8 	movq	-8(%rbp), %rax
+100000df3:	80 38 00 	cmpb	$0, (%rax)
+100000df6:	0f 84 36 00 00 00 	je	54 <_getHash+0x62>
+100000dfc:	48 8b 45 f8 	movq	-8(%rbp), %rax
+100000e00:	48 89 c1 	movq	%rax, %rcx
+100000e03:	48 83 c1 01 	addq	$1, %rcx
+100000e07:	48 89 4d f8 	movq	%rcx, -8(%rbp)
+100000e0b:	0f be 10 	movsbl	(%rax), %edx
+100000e0e:	83 ea 61 	subl	$97, %edx
+100000e11:	83 c2 01 	addl	$1, %edx
+100000e14:	48 63 c2 	movslq	%edx, %rax
+100000e17:	48 0f af 45 e0 	imulq	-32(%rbp), %rax
+100000e1c:	48 03 45 e8 	addq	-24(%rbp), %rax
+100000e20:	48 89 45 e8 	movq	%rax, -24(%rbp)
+100000e24:	48 6b 45 e0 1f 	imulq	$31, -32(%rbp), %rax
+100000e29:	48 89 45 e0 	movq	%rax, -32(%rbp)
+100000e2d:	e9 bd ff ff ff 	jmp	-67 <_getHash+0x1f>
+100000e32:	48 8b 45 e8 	movq	-24(%rbp), %rax
+100000e36:	5d 	popq	%rbp
+100000e37:	c3 	retq
+100000e38:	0f 1f 84 00 00 00 00 00 	nopl	(%rax,%rax)
+
+_checkPass:
+100000e40:	55 	pushq	%rbp
+100000e41:	48 89 e5 	movq	%rsp, %rbp
+100000e44:	48 83 ec 10 	subq	$16, %rsp
+100000e48:	48 89 7d f0 	movq	%rdi, -16(%rbp)
+100000e4c:	48 8b 7d f0 	movq	-16(%rbp), %rdi
+100000e50:	e8 7b ff ff ff 	callq	-133 <_getHash>
+100000e55:	48 3d 90 9c 6f 22 	cmpq	$577739920, %rax
+100000e5b:	0f 85 09 00 00 00 	jne	9 <_checkPass+0x2a>
+100000e61:	c6 45 ff 01 	movb	$1, -1(%rbp)
+100000e65:	e9 04 00 00 00 	jmp	4 <_checkPass+0x2e>
+100000e6a:	c6 45 ff 00 	movb	$0, -1(%rbp)
+100000e6e:	8a 45 ff 	movb	-1(%rbp), %al
+100000e71:	24 01 	andb	$1, %al
+100000e73:	0f b6 c0 	movzbl	%al, %eax
+100000e76:	48 83 c4 10 	addq	$16, %rsp
+100000e7a:	5d 	popq	%rbp
+100000e7b:	c3 	retq
+100000e7c:	0f 1f 40 00 	nopl	(%rax)
+
+_main:
+100000e80:	55 	pushq	%rbp
+100000e81:	48 89 e5 	movq	%rsp, %rbp
+100000e84:	48 81 ec 90 00 00 00 	subq	$144, %rsp
+100000e8b:	48 8d 3d e0 00 00 00 	leaq	224(%rip), %rdi
+100000e92:	48 8b 05 77 01 00 00 	movq	375(%rip), %rax
+100000e99:	48 8b 00 	movq	(%rax), %rax
+100000e9c:	48 89 45 f8 	movq	%rax, -8(%rbp)
+100000ea0:	c7 45 8c 00 00 00 00 	movl	$0, -116(%rbp)
+100000ea7:	b0 00 	movb	$0, %al
+100000ea9:	e9 2e 00 00 00 	jmp	46 <_main+0x5c>
+100000eae:	48 8d 3d d3 00 00 00 	leaq	211(%rip), %rdi
+100000eb5:	48 8d 75 90 	leaq	-112(%rbp), %rsi
+100000eb9:	89 45 88 	movl	%eax, -120(%rbp)
+100000ebc:	b0 00 	movb	$0, %al
+100000ebe:	e8 79 00 00 00 	callq	121
+100000ec3:	48 8d 7d 90 	leaq	-112(%rbp), %rdi
+100000ec7:	89 45 84 	movl	%eax, -124(%rbp)
+100000eca:	e8 71 ff ff ff 	callq	-143 <_checkPass>
+100000ecf:	a8 01 	testb	$1, %al
+100000ed1:	0f 85 05 00 00 00 	jne	5 <_main+0x5c>
+100000ed7:	90 	nop
+100000ed8:	90 	nop
+100000ed9:	90 	nop
+100000eda:	90 	nop
+100000edb:	90 	nop
+100000edc:	48 8d 3d a8 00 00 00 	leaq	168(%rip), %rdi
+100000ee3:	b0 00 	movb	$0, %al
+100000ee5:	e8 4c 00 00 00 	callq	76
+100000eea:	89 45 80 	movl	%eax, -128(%rbp)
+100000eed:	e9 14 00 00 00 	jmp	20 <_main+0x86>
+100000ef2:	48 8d 3d a2 00 00 00 	leaq	162(%rip), %rdi
+100000ef9:	b0 00 	movb	$0, %al
+100000efb:	e8 36 00 00 00 	callq	54
+100000f00:	89 85 7c ff ff ff 	movl	%eax, -132(%rbp)
+100000f06:	48 8b 05 03 01 00 00 	movq	259(%rip), %rax
+100000f0d:	48 8b 00 	movq	(%rax), %rax
+100000f10:	48 8b 4d f8 	movq	-8(%rbp), %rcx
+100000f14:	48 39 c8 	cmpq	%rcx, %rax
+100000f17:	0f 85 0b 00 00 00 	jne	11 <_main+0xa8>
+100000f1d:	31 c0 	xorl	%eax, %eax
+100000f1f:	48 81 c4 90 00 00 00 	addq	$144, %rsp
+100000f26:	5d 	popq	%rbp
+100000f27:	c3 	retq
+100000f28:	e8 03 00 00 00 	callq	3
+100000f2d:	0f 0b 	ud2
+Disassembly of section __TEXT,__stubs:
+__stubs:
+100000f30:	ff 25 e2 00 00 00 	jmpq	*226(%rip)
+100000f36:	ff 25 e4 00 00 00 	jmpq	*228(%rip)
+100000f3c:	ff 25 e6 00 00 00 	jmpq	*230(%rip)
+Disassembly of section __TEXT,__stub_helper:
+__stub_helper:
+100000f44:	4c 8d 1d bd 00 00 00 	leaq	189(%rip), %r11
+100000f4b:	41 53 	pushq	%r11
+100000f4d:	ff 25 ad 00 00 00 	jmpq	*173(%rip)
+100000f53:	90 	nop
+100000f54:	68 00 00 00 00 	pushq	$0
+100000f59:	e9 e6 ff ff ff 	jmp	-26 <__stub_helper>
+100000f5e:	68 18 00 00 00 	pushq	$24
+100000f63:	e9 dc ff ff ff 	jmp	-36 <__stub_helper>
+100000f68:	68 26 00 00 00 	pushq	$38
+100000f6d:	e9 d2 ff ff ff 	jmp	-46 <__stub_helper>
